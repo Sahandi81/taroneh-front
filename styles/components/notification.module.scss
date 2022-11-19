@@ -1,0 +1,38 @@
+@use '../abstracts' as *;
+@use '../base/animations';
+
+.container {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  height: 5rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem 10%;
+  box-shadow: 0 -3px 6px rgba(0 0 0 / 20%);
+  z-index: 99999;
+  animation: moveInBottom 300ms ease-in-out 50ms backwards;
+  p {
+    color: #fff;
+    font-size: .875rem;
+    font-weight: 500;
+
+    @include respondCustomMin(40em) {
+      font-size: 1.125rem;
+    }
+  }
+}
+
+.success {
+  background-color: rgba(83, 187, 139, 1);
+}
+
+.error {
+  background-color: rgba(226, 71, 75, 1);
+}
+
+.pending {
+  background-color: rgba(0, 123, 175, 1);
+}

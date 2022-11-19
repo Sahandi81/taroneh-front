@@ -1,0 +1,113 @@
+@use '../abstracts' as *;
+
+.container {
+  background-color: #fff;
+  border-radius: .625rem;
+  overflow: hidden;
+  box-shadow: 0 5px 6px rgba(#acb4c6, .17);
+  margin-top: 6rem;
+
+  @include respondCustomMin(70.625em) {
+    margin-top: 15rem;
+  }
+}
+
+.searchbar {
+  position: fixed;
+  inset: 0 0 auto 0;
+  width: 100%;
+  z-index: 10;
+  background-color: white;
+  box-shadow: 0 .5rem 1.5rem rgb(0 0 0 / 15%);
+  padding: .5rem;
+
+  @include respondCustomMin(70.625em) {
+    display: none;
+  }
+
+  &_content {
+    display: flex;
+    align-items: center;
+    padding: .75rem;
+    gap: .5rem;
+    background-color: #F9F9F9;
+    position: relative;
+    border-radius: .625rem;
+
+    > * {
+      flex-shrink: 0;
+    }
+
+    input {
+      background-color: transparent;
+      border: none;
+      width: 90%;
+
+      &:focus {outline: none}
+    }
+
+    img {
+      position: absolute;
+      right: 6.5rem;
+      width: 52px;
+      height: auto;
+    }
+  }
+}
+
+.tab_bar {
+  background-color: $color-blue-200;
+  display: flex;
+  overflow-x: scroll;
+
+  @include respondCustomMin(68.75em) {
+    overflow-x: hidden;
+  }
+}
+
+.tab {
+  padding: .9em 1.7em;
+  color: #9a9a9a;
+  font-size: 1.25rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  @include respondCustomMax(68.75em) {
+    background-color: #f8f8f8;
+  }
+}
+
+.icon {
+  fill: #9a9a9a;
+  stroke: #9a9a9a;
+  padding-left: .5rem;
+
+  @include respondCustomMax(68.75em) {
+    display: none;
+  }
+}
+
+.active_tab {
+  color: $color-primary;
+  background-color: #fff;
+
+
+  .icon {
+    fill: $color-primary;
+    stroke: $color-primary;
+  }
+
+  @include respondCustomMax(68.75em) {
+    background-color: #f8f8f8;
+  }
+}
+
+.result {
+  max-width: min(90%, 84.0625rem);
+  margin: 3.75rem auto;
+  display: grid;
+  justify-items: center;
+  grid-template-columns: repeat(auto-fit, minmax(14.3125rem, 1fr));
+  gap: 3.125rem;
+}

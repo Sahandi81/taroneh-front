@@ -1,0 +1,13 @@
+@use "../abstracts" as *;
+
+.container {
+	display: grid;
+	gap: 2.6875rem;
+	justify-items: center;
+	padding: 0 0 2.5rem;
+	// border-top: 1px solid #ECECEC;
+
+	@include respond("phone") {
+		grid-template-columns: repeat(auto-fit, minmax(2.125rem, 1fr));
+	}
+}

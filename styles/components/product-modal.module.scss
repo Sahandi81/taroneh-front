@@ -1,0 +1,97 @@
+@use '../abstracts' as *;
+
+.container {
+  width: min(80vw, 1440px);
+}
+
+.item {
+  max-width: 31.25rem;
+  height: 18rem;
+  margin: 0 auto 1.5rem auto;
+  position: relative;
+
+  @include respondCustomMin(50em) {
+    height: 31.25rem;
+  }
+}
+
+.current {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+
+  &_active {
+    display: block;
+  }
+}
+
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  padding-bottom: 1rem !important;
+
+  @include respondCustomMin(50em) {
+    flex-wrap: nowrap;
+    padding-bottom: 2rem !important;
+  }
+  
+  li > div {
+    width: 3rem;
+    height: 3rem;
+    border-radius: .625rem;
+    border: 1px solid #C5C5C5;
+    cursor: pointer;
+    overflow: hidden;
+    opacity: .7;
+
+    &:hover {
+      opacity: 1;
+    }
+
+    @include respond('phone') {
+      width: 4rem;
+      height: 4rem;
+      padding-bottom: 0;
+    }
+  }
+}
+
+.actions {
+  display: none;
+  visibility: hidden;
+
+  @include respondCustomMin(50em) {
+    display: block;
+    visibility: visible;
+  }
+
+  button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+
+    &:first-of-type {
+      right: 1rem;
+
+      @include respondCustomMin(50em) {
+        right: 2rem;
+      }
+
+      .icon {
+        transform: rotate(180deg);
+      }
+    }
+
+    &:last-of-type {
+      left: 1rem;
+
+      @include respondCustomMin(50em) {
+        left: 2rem;
+      }
+    }
+  }
+}

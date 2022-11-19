@@ -1,0 +1,64 @@
+@use '../abstracts' as *;
+
+.container {
+  border: 1px solid #EAEEF3;
+  border-radius: .625rem;
+  box-shadow: 0 0 .9375rem rgba(#ADB6D9, .17);
+  padding: 1rem 1.5rem 2rem 1.5rem;
+  cursor: pointer;
+  transition: 250ms;
+
+  &:hover {
+    box-shadow: 0 3px .9375rem rgba(#ADB6D9, .45);
+    transform: translateY(-3px);
+  }
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  @include respond('phone') {
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: space-between;
+  }
+}
+
+.rating {
+  display: flex;
+  align-items: center;
+
+  span {
+    color: #8A8A8A;
+    font-size: .75rem;
+  }
+
+  .icon {
+    margin-right: .5rem;
+  }
+}
+
+.title {
+  color: $color-primary;
+  font-size: 1.25rem;
+  font-weight: 500;
+  margin-top: 2rem;
+}
+
+.content {
+
+  h4 {
+    color: #959595;
+    font-size: .9375;
+    font-weight: normal;
+    margin-bottom: .75rem;
+  }
+
+  p {
+    color: #626262;
+    line-height: 1.9;
+  }
+}
+

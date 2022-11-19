@@ -1,0 +1,30 @@
+@use '../abstracts' as *;
+
+.container {
+  border-radius: .625rem;
+  padding: 1rem;
+  box-shadow: 0 2px 4px #DBE4F9;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem 2rem;
+
+  article {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem 2rem;
+
+    @include respondCustomMin(70.625em) {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+
+  @include respond('phone') {
+    padding: 2rem;
+  }
+  
+  @include respondCustomMin(70.625em) {
+    margin-top: 12rem;
+  }
+}

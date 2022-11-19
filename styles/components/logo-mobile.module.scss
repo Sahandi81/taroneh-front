@@ -1,0 +1,8 @@
+@use '../abstracts' as *;
+
+.container {
+  display: block;
+  @include respondCustomMin(70.625em) {
+    display: none;
+  }
+}

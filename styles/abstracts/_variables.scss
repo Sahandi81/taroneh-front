@@ -1,0 +1,51 @@
+// Colors
+$hue: 155;
+$sat: 100%;
+$color-primary: hsl($hue, $sat, 37%);
+$color-primary-light-1: hsl($hue, $sat, 98%);
+$color-primary-light-2: hsl($hue, 43%, 53%);
+$color-primary-dark-1: hsl($hue, $sat, 30%);
+
+// $color-primary-light-2: hsl(152, 43%, 53%);
+
+$color-gray-100: #F9F9F9;
+$color-gray-200: #D8D8D8;
+$color-gray-300: #A5A5A5;
+$color-gray-400: #959595;
+$color-gray-500: #727272;
+$color-gray-600: #707070;
+$color-gray-700: #5D5D5D;
+$color-gray-800: #393939;
+
+$color-blue-100: #F5FAFF;
+$color-blue-200: #F4F6F9;
+$color-blue-300: #F2F5FA;
+$color-blue-400: #E6F3FF;
+$color-blue-900: #17B0F1;
+
+$color-red-100: #FBF9F7;
+$color-red-200: #FCEFE8;
+$color-red-300: #FCEEEE;
+$color-red-900: #FF3636;
+
+// Font Family
+$ff-primary: Shabnam, sans-serif;
+
+// Font Size
+$fs-heading-1: clamp(1.25rem, 6vw - 1rem, 2.875rem);
+$fs-heading-2: clamp(1.125rem, 4vw - 1rem, 1.75rem);
+$fs-heading-3: clamp(1rem, 2vw - 1rem, 1.25rem);
+$fs-title-sub: clamp(.75rem, 4vw - 1rem, 1.5625rem);
+
+$fs-400: 1rem;
+$fs-500: 1.125rem;
+$fs-600: 1.25rem;
+$fs-700: 1.5rem;
+$fs-800: 1.875rem;
+$fs-900: 2.25rem;
+
+// Container
+$container-max-width: 95.8125rem;
+
+// Header Height
+$header-height: 9rem;

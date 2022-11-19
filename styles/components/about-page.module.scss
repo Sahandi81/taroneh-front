@@ -1,0 +1,19 @@
+@use '../abstracts' as *;
+.container {
+  @include respondCustomMin(70.625rem) {
+    margin-top: 13rem;
+  }
+}
+
+.body {
+  padding: 2.5rem 2.5rem 5rem;
+}
+
+.paragraph {
+  color: #626262;
+  line-height: 2.5;
+
+  &:not(:last-child) {
+    margin-bottom: 4rem;
+  }
+}

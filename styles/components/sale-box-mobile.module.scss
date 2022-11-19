@@ -1,0 +1,49 @@
+@use '../abstracts' as *;
+
+.container {
+  border-radius: .625rem;
+  border: 1px solid #DDDDDD;
+  overflow: hidden;
+
+  @include respondCustomMin(70.625em) {
+    display: none;
+  }
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.25rem;
+  
+  h2 {
+    color: #3D3D3D;
+    font-size: 1rem;
+    font-weight: 500;
+  }
+}
+
+.more {
+  color: #3D3D3D;
+  text-decoration: none;
+  span {
+    margin-left: .5rem;
+  }
+}
+
+.body {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.25rem 1rem 1.5rem;
+  overflow-x: auto;
+
+  > * {
+    flex-shrink: 0;
+  }
+}
+
+.list {
+  display: flex;
+  gap: 1.25rem;
+}

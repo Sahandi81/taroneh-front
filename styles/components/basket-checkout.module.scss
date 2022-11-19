@@ -1,0 +1,192 @@
+@use '../abstracts' as *;
+
+.container {
+  border-radius: .625rem;
+  border: 1px solid #EAEEF3;
+  overflow: hidden;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+
+  @include respondCustomMin(70.625em) {
+    max-width: 22.0625rem;
+    align-self: unset;
+  }
+}
+
+.header {
+  color: #013044;
+  font-weight: 500;
+  font-size: 1rem;
+  text-align: center;
+  background-color: #F4F6F9;
+  border-bottom: 5px solid #F3F3F3;
+  padding: 1.25rem 0;
+
+  @include respond('phone') {
+    font-size: 1.125rem;
+  }
+}
+
+.total {
+  padding: 1.125rem;
+  background-color: #F5FFFB;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, min-content);
+  row-gap: 1rem;
+  justify-content: space-between;
+  border-bottom: 1px solid #EAEEF3;
+
+  @include respond('phone') {
+    padding: 1.25rem 1.5rem;
+  }
+
+  .total_label {
+    white-space: nowrap;
+    color: #8E8E8E;
+
+    &:first-of-type {
+      font-size: .875rem;
+
+      @include respond('phone') {
+        font-size: 1rem;
+      }
+    }
+
+    &:last-of-type {
+      font-size: 1.0625rem;
+
+      @include respond('phone') {
+        font-size: 1.25rem;
+      }
+    }
+  }
+
+  .total_value {
+    white-space: nowrap;
+    color: #5D5D5D;
+    text-align: end;
+    font-size: 1.0625rem;
+    font-weight: 500;
+
+    &:last-of-type {
+      font-size: 1.125rem;
+      font-weight: 500;
+
+      @include respond('phone') {
+        font-size: 1.5625rem;
+      }
+
+      span:last-of-type {
+        font-size: .9375rem;
+        margin-right: .5rem;
+
+        @include respond('phone') {
+          font-size: 1.125rem;
+        }
+      }
+    }
+  }
+}
+
+.item {
+  display: grid;
+  grid-template-columns: min-content 1fr min-content;
+  padding: 1.125rem;
+  gap: 1.25rem .75rem;
+  align-items: center;
+  border-bottom: 1px solid #EAEEF3;
+  background-color: #fff;
+
+  @include respond('phone') {
+    padding: 1.5rem;
+  }
+
+  .delete {
+    grid-row: 1;
+    grid-column: 1;
+    cursor: pointer;
+  }
+
+  .title {
+    grid-row: 1;
+    grid-column: 2;
+    color: #013044;
+    font-size: .875rem;
+    font-weight: 500;
+
+    @include respond('phone') {
+      font-size: 1rem;
+    }
+  }
+
+  .price {
+    grid-row: 1;
+    grid-column: 3;
+
+    span {
+      color: #393939;
+      font-size: .9375rem;
+      font-weight: 500;
+
+      @include respond('phone') {
+        font-size: 1rem;
+      }
+
+      &:last-of-type {
+        color: #C5C5C5;
+        font-weight: normal;
+        margin-right: .25rem;
+      }
+    }
+  }
+
+  .weight {
+    grid-row: 2;
+    grid-column: 2;
+
+    span {
+      font-size: 1.125rem;
+      font-weight: 500;
+      color: #393939;
+
+      @include respond('phone') {
+        font-size: 1.25rem;
+      }
+
+      &:last-of-type {
+        color: #B9B9B9;
+        font-size: .875rem;
+        font-weight: 500;
+        margin-right: .5rem;
+
+        @include respond('phone') {
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+
+  .item_actions {
+    grid-row: 2;
+    grid-column: 3;
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.action {
+  padding: 1.4375rem 1.5rem;
+  background-color: #fff;
+  text-align: center;
+
+  button {
+    padding: .9375rem 0 !important;
+    font-size: 1rem !important;
+    width: min(95%, 18rem);
+  }
+}

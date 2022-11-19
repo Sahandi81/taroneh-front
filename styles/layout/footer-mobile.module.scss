@@ -1,0 +1,114 @@
+@use '../abstracts' as *;
+
+.container {
+  background-color: #fcfcfc;
+  margin-bottom: 4rem;
+  @include respondCustomMin(70.625em) {
+    display: none;
+  }
+}
+
+.body {
+  padding: 1.5rem;
+}
+
+.quick_access {
+
+  h3 {
+    color: #3d3d3d;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+
+    @include respondCustomMin(40rem) {
+      font-size: 1.125rem;
+    }
+  }
+}
+
+.navigation {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .75rem 2rem;
+  margin-bottom: 2rem;
+
+  .link {
+    font-size: .875rem;
+    color: #626262;
+    text-decoration: none;
+    flex-basis: 44%;
+    position: relative;
+    padding-right: 1rem;
+    display: flex;
+    align-items: center;
+
+    @include respondCustomMin(40rem) {
+      font-size: 1rem;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      right: 0;
+      display: block;
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background-color: $color-primary;
+    }
+  }
+}
+
+.enamad {
+  display: flex;
+  justify-content: center;
+  gap: .75rem;
+  padding-bottom: 2rem;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid #ababab;
+  cursor: pointer;
+
+  .item {
+    border-radius: 1rem;
+    border: 1px solid #c8c8c8;
+    background-color: #fff;
+    padding: .75rem;
+    display: grid;
+    place-items: center;
+  }
+}
+
+.about {
+  h3 { 
+    color: #3d3d3d;
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: .75rem;
+    
+    @include respondCustomMin(40rem) {
+      font-size: 1.125rem;
+    }
+  }
+
+  p {
+    color: #5d5d5d;
+    font-size: .75rem;
+    line-height: 1.8;
+
+    @include respondCustomMin(40rem) {
+      font-size: .875rem;
+    }
+  }
+}
+
+.copyright {
+  width: 100%;
+  color: #b1b1b1;
+  font-size: .75rem;
+  text-align: center;
+  padding: 2rem 0;
+  background-color: #F4F4F4;
+
+  @include respondCustomMin(40rem) {
+    font-size: 1rem;
+  }
+}

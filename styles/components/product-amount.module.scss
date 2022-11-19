@@ -1,0 +1,23 @@
+.product_amount {
+    
+  input { 
+    display: none;
+
+    &:checked + label {
+      background-color: #6D6D6D;
+      color: #fff;
+    }
+  };
+
+  label { 
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 3.1875rem;
+    height: 1.625rem;
+    border-radius: 6px;
+    background-color: #E8E8E8;
+    color: #727272;
+    cursor: pointer;
+  }
+}

@@ -1,0 +1,13 @@
+export const MSG_PHONE_LENGTH = 'شماره موبایل میبایست 11 رقمی باشد!';
+export const MSG_PASSWORD_LENGTH = 'رمز عبور می بایست بیشتر از 6 کاراکتر باشد';
+export const MSG_CONFIRM_PASSWORD_DIFF = 'تکرار رمز عبور با رمز عبور یکسان نمی باشد';
+export const MSG_INVALID_CREDENTIALS = 'اطلاعات کاربری اشتباه است';
+export const MSG_ERROR_SEND_VERIFICATION_CODE = 'خطا در ارسال کد تایید';
+export const MSG_INVALID_VERIFY_CODE = 'کد تایید نامعتبر می باشد';
+export const MSG_REGISTERATION_COMPLETED = 'عضویت شما با موفقیت انجام شد';
+export const MSG_ERROR_IN_REGISTERATION = 'خطا در فرآیند ثبت نام، لطفا با پشتیبانی سایت تماس بگیرید';
+export const MSG_SELECT_ADDRESS = 'آدرسی برای ارسال محصول انتخاب نشده است';
+export const MSG_EMPTY_BASKET = 'سبد خرید شما خالی می باشد';
+export const MSG_SERVER_ERROR = 'خطای سمت سرور';
+export const MSG_INVALID_EMAIL = 'فرمت ایمیل وارد شده اشتباه است';
+export const LOGOUT_ERROR = 'خطا در خروج از حساب کاربری';

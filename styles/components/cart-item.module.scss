@@ -1,0 +1,110 @@
+@use '../abstracts' as *;
+
+.container {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  border-bottom: 1px solid #dedede;
+  padding-bottom: 1rem;
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+}
+
+.image {
+  width: 80px;
+  height: 80px;
+  border-radius: .625rem;
+  border: 1px solid #d9d9d9;
+  overflow: hidden;
+  flex-shrink: 0;
+
+  @include respondCustomMin(70.625em) {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+.name {
+  color: #626262;
+  font-size: 1rem;
+  font-weight: normal;
+
+  @include respondCustomMin(70.625em) {
+    font-size: 1.125rem;
+  }
+}
+
+.price {
+  display: flex;
+  align-items: center;
+  gap: 1.75rem;
+  white-space: nowrap;
+
+  @include respond('phone') {
+    gap: 4rem;
+  }
+
+  label {
+    color: #959595;
+    font-size: .875rem;
+
+    @include respondCustomMin(70.625em) {
+      gap: 4rem;
+      font-size: .9375rem;
+    }
+  }
+
+  span {
+    color: #626262;
+    font-size: 1rem;
+
+    @include respondCustomMin(70.625em) {
+      font-size: 1.125rem;
+    }
+
+    span {
+      font-size: .8125rem;
+
+      @include respondCustomMin(70.625em) {
+        font-size: 14px;
+      }
+    }
+  }
+}
+
+.wieght {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  // gap: 5rem;
+
+  label {
+    color: #B9B9B9;
+    font-size: .875rem;
+
+    @include respondCustomMin(70.625em) {
+      font-size: .9375rem;
+    }
+  }
+
+  > div {
+    display: flex;
+    align-items: center;
+  }
+
+  span {
+    color: #626262;
+    font-size: 1rem;
+    display: inline-block;
+    margin-right: .875rem;
+    margin-left: .875rem;
+
+    @include respondCustomMin(70.625em) {
+      font-size: 1.25rem;
+    }
+  }
+}

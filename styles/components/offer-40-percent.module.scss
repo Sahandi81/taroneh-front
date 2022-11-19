@@ -1,0 +1,15 @@
+@use '../abstracts' as *;
+
+.container {
+  width: 90%;
+  margin: 0 auto;
+  padding: 1rem 0;
+  border-radius: .625rem;
+  background-color: #00BF6F;
+  text-align: center;
+  color: #fff;
+
+  @include respondCustomMin(70.625em) {
+    display: none;
+  }
+}

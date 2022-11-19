@@ -1,0 +1,42 @@
+@use '../abstracts' as *;
+
+.account {
+  position: relative;
+
+  .profile_dropdown {
+    display: flex;
+    align-items: center;
+    padding: .35rem .65rem;
+    border-radius: .625rem;
+    cursor: pointer;
+
+    &:hover {
+      background-color: rgba(128, 128, 128, .05);
+    }
+  }
+
+  .user_icon {
+    width: 1.5rem;
+    height: 1.5rem;
+    fill: #ccc;
+
+    @include respondCustomMin(81.25em) { 
+      width: 1.875rem;
+      height: 1.875rem;
+    }
+  }
+
+  span {
+    width: 5.5rem;
+    color: #5D5D5D;
+    font-size: .875rem;
+    margin: 0 .35rem;
+    pointer-events: none;
+
+    @include respondCustomMin(81.25em) { 
+      font-size: 1rem;
+      width: 6rem;
+      margin: 0 .45rem;
+    }
+  }
+}

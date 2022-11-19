@@ -1,0 +1,7 @@
+@use '../abstracts' as *;
+
+.container {
+  @include respondCustomMin(70.625em) {
+    margin-top: 13rem;
+  }
+}

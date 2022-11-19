@@ -1,0 +1,62 @@
+@use '../abstracts' as *;
+
+.container {
+  border-radius: .625rem;
+  border: 1px solid #ddd;
+  background-color: #fbfbfb;
+  padding: .75rem;
+  flex: .4;
+
+  form {
+    display: flex;
+    align-items: center;
+  }
+
+  @include respondCustomMax(81.25em) { 
+    padding: .5rem;
+  }
+
+  input {
+    flex-grow: 1;
+    border: none;
+    background-color: transparent;
+    color: $color-gray-500;
+
+    @include respondCustomMax(81.25em) { 
+      font-size: .875rem;
+    }
+
+    &:focus {outline:none}
+    &::placeholder {
+      color: #A1A1A1;
+    }
+  }
+
+  button {
+    appearance: none;
+    border: none;
+    background: transparent;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    &:focus { outline: none }
+  }
+}
+
+.focused {
+  background-color: #fff;
+  box-shadow: 0 0 5px rgba(0 0 0 / 10%);
+}
+
+.icon {
+  cursor: pointer;
+  stroke: #969696;
+
+  @include respondCustomMax(81.25em) { 
+    width: 1.25rem;
+    height: 1.25rem;
+  }
+
+  &:hover {stroke: $color-primary;}
+}

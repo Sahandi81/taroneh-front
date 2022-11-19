@@ -1,0 +1,329 @@
+@use "../abstracts" as *;
+
+.container {
+	@include respondCustomMin(70.625em) {
+		flex-grow: 0.6;
+	}
+}
+
+.title {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding-bottom: 0.75rem;
+	border-bottom: 1px solid rgba(#d9d9d9, 0.3);
+
+	h2 {
+		font-size: 1rem;
+		font-weight: 500;
+		color: #393939;
+
+		@include respond("phone") {
+			font-size: 1.125rem;
+		}
+
+		@include respond("tab-land") {
+			font-size: 1.25rem;
+		}
+	}
+}
+
+.rating_box {
+	display: flex;
+}
+
+.rating {
+	fill: transparent;
+	stroke: #c8c8c8;
+	width: 1rem;
+	height: 1rem;
+
+	@include respond("phone") {
+		width: 1.125rem;
+		height: 1.125rem;
+	}
+
+	// &:not(:first-child) {
+	//   fill: #FEE932;
+	//   stroke: #FEE932;
+	// }
+
+	&.active {
+		fill: #fee932;
+		stroke: #fee932;
+	}
+}
+
+.detail {
+	padding-top: 1rem;
+}
+
+.attributes {
+	@include respond("tab-port") {
+		display: flex;
+		gap: 4rem;
+	}
+
+	@include respondCustomMin(70.625em) {
+		gap: 1.5rem;
+	}
+
+	@include respondCustomMin(100em) {
+		gap: 3rem;
+	}
+
+	> div:last-of-type {
+		padding-top: 1rem;
+		margin-top: 1rem;
+		border-top: 1px solid rgba(#ccc, 0.3);
+
+		@include respond("tab-port") {
+			padding-top: 0;
+			margin-top: 0;
+			border-top: none;
+			border-right: 1px solid rgba(#ccc, 0.3);
+			padding-right: 3rem;
+		}
+
+		@include respondCustomMin(70.625em) {
+			padding-right: 1rem;
+		}
+
+		@include respondCustomMin(100em) {
+			padding-right: 3rem;
+		}
+
+		h4 {
+			font-size: 0.875rem;
+			font-weight: 500;
+			margin-bottom: 1rem;
+			color: #959595;
+
+			@include respond("phone") {
+				font-size: 1rem;
+			}
+		}
+	}
+}
+
+.code_level {
+	display: flex;
+	justify-content: space-between;
+
+	@include respond("tab-port") {
+		gap: 4rem;
+	}
+
+	> div {
+		display: flex;
+		align-items: center;
+		white-space: nowrap;
+	}
+
+	label {
+		font-size: 0.8rem;
+		color: #959595;
+
+		@include respond("phone") {
+			font-size: 1rem;
+		}
+	}
+
+	span {
+		font-size: 0.85rem;
+		font-weight: 500;
+		color: #393939;
+
+		@include respond("phone") {
+			font-size: 1rem;
+		}
+	}
+}
+
+.amount {
+	margin-top: 1.5rem;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+	label {
+		font-size: 0.8rem;
+		color: #959595;
+
+		@include respond("phone") {
+			font-size: 1rem;
+		}
+	}
+
+	> div {
+		display: flex;
+		align-items: center;
+		gap: 0.75rem;
+
+		span {
+			font-size: 1.25rem;
+			color: #757575;
+		}
+	}
+}
+
+.price {
+	display: flex;
+	flex-direction: column;
+	margin-top: 1.5rem;
+
+	> p {
+		align-self: flex-end;
+	}
+
+	> div {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+
+		> label {
+			font-size: 0.8rem;
+			color: #959595;
+
+			@include respond("phone") {
+				font-size: 1rem;
+			}
+		}
+
+		> p {
+			font-size: 1.25rem;
+			font-weight: 500;
+			color: $color-primary;
+
+			@include respond("phone") {
+				font-size: 1.45rem;
+			}
+
+			span {
+				font-size: 0.875rem;
+				color: #626262;
+			}
+		}
+	}
+}
+
+.beforeOff {
+	color: #c1c1c1;
+	text-decoration: line-through;
+	font-size: 0.875rem;
+
+	@include respond("phone") {
+		font-size: 1rem;
+	}
+}
+
+.attributes_list {
+	list-style-type: none;
+
+	li {
+		font-size: 0.8rem;
+		margin-top: 0.5rem;
+		padding-right: 1rem;
+		position: relative;
+		display: flex;
+		align-items: center;
+		color: #626262;
+
+		@include respond("phone") {
+			font-size: 1rem;
+		}
+
+		&::before {
+			content: "";
+			display: block;
+			position: absolute;
+			right: 0;
+			width: 6px;
+			height: 6px;
+			background-color: #b4b4b4;
+			border-radius: 50%;
+		}
+	}
+}
+
+.action {
+	margin-top: 1rem;
+}
+
+.description {
+	margin-top: 2rem;
+
+	label {
+		font-size: 0.875rem;
+		color: #959595;
+		flex-shrink: 0;
+
+		@include respond("phone") {
+			font-size: 1rem;
+		}
+	}
+
+	p {
+		margin-top: 0.5rem;
+		font-size: 0.8rem;
+		color: #626262;
+		max-width: 75ch;
+		line-height: 1.8;
+
+		@include respond("phone") {
+			font-size: 1rem;
+		}
+	}
+}
+
+.tags {
+	margin-top: 2rem;
+	cursor: pointer;
+
+	@include respondCustomMin(70.625em) {
+		display: flex;
+		align-items: baseline;
+		gap: 1rem;
+	}
+
+	label {
+		font-size: 0.875rem;
+		color: #959595;
+
+		@include respond("phone") {
+			font-size: 1rem;
+		}
+	}
+
+	> div {
+		margin-top: 0.25rem;
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		gap: 0.5rem 0.5rem;
+	}
+}
+
+.product_package {
+	input {
+		display: none;
+
+		&:checked + label {
+			background-color: #6d6d6d;
+			color: #fff;
+		}
+	}
+
+	label {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		// width: 3.1875rem;
+		padding: 1rem;
+		height: 1.625rem;
+		border-radius: 6px;
+		background-color: #e8e8e8;
+		color: #727272;
+		cursor: pointer;
+	}
+}

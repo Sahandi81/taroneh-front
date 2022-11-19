@@ -1,0 +1,48 @@
+@use '../abstracts' as *;
+@use '../base/animations';
+
+.container {
+  position: relative;
+  cursor: pointer;
+
+  .icon {
+    position: relative;
+    z-index: 5;
+    transform: translateY(5px);
+
+    @include respondCustomMax(81.25em) { 
+      width: 1.5rem;
+      height: 1.5rem;
+    }
+  }
+
+  span[data-value="0"] {
+    display: none;
+  }
+
+  span {
+    position: absolute;
+    bottom: -1px;
+    right: -15px;
+    text-align: center;
+    width: 1.18rem;
+    height: 1.18rem;
+    background-color: $color-primary;
+    color: #fff;
+    border-radius: 50%;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @include respondCustomMax(81.25em) { 
+      width: 1rem;
+      height: 1rem;
+      font-size: .8125rem;
+    }
+  }
+
+  .animate {
+    animation: animateBasket 900ms ease-in-out backwards;
+  }
+}

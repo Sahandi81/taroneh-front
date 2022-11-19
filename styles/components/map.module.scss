@@ -1,0 +1,12 @@
+@use '../abstracts' as *;
+
+.container {
+  border-radius: .625rem;
+  border: 1px solid #D9D9D9;
+  overflow: hidden;
+
+  @include respondCustomMax(56.875em) {
+    height: 15rem;
+    border-radius: 0;
+  }
+}

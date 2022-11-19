@@ -1,0 +1,42 @@
+@use '../abstracts' as *;
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #fff;
+  margin-bottom: 1.5rem;
+  overflow: hidden;
+
+  @include respondCustomMin(70.625em) { 
+    height: $header-height;
+    justify-content: normal;
+    flex-direction: row;
+    margin-bottom: 0;
+    padding: 0 .85rem 0;
+    box-shadow: 0 4px 8px rgba(0 0 0/ 10%);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 2000;
+    overflow: unset;
+  }
+
+  .orderTrackButton {
+    width: 90%;
+    margin: 0 auto;
+    padding: 1rem 0;
+    border-radius: .625rem;
+    background-color: #00BF6F;
+    text-align: center;
+    color: #fff;
+    cursor: pointer;
+    border: none;
+    &:focus{outline: none;}
+
+    @include respondCustomMin(70.625em) {
+      display: none;
+    }
+  }
+}

@@ -1,0 +1,16 @@
+.container {
+  padding: 3rem 5rem 1.5rem;
+  text-align: center;
+}
+
+.actions {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+
+  button {
+    width: 10rem;
+  }
+}

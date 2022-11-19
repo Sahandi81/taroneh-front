@@ -1,0 +1,147 @@
+@use '../abstracts' as *;
+
+.container {
+  border-radius: .625rem;
+  overflow: hidden;
+  background-color: $color-red-100;
+  box-shadow: 0 6px 6px rgba(181, 181, 181, .2);
+  margin-bottom: 3rem;
+
+  @include respondCustomMin(70.625em) {
+    display: none;
+  }
+}
+
+.header {
+  background-color: $color-primary;
+  color: #fff;
+  padding: 1.375rem 2rem;
+  font-size: 1.125rem;
+  white-space: none;
+  text-align: center;
+
+  @include respondCustomMin(40rem) {
+    font-size: 1.35rem;
+  }
+}
+
+.timer {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: .65rem;
+  
+  span {
+    &:nth-child(1),
+    &:nth-child(3),
+    &:nth-child(5) {
+      display: inline-flex;
+      flex-shrink: 0;
+      justify-content: center;
+      align-items: center;
+      background-color: #fff;
+      border-radius: 50%;
+      font-size: 1.325rem;
+      color: $color-primary;
+      width: 2.75rem;
+      height: 2.75rem;
+
+      @include respondCustomMin(40rem) {
+        font-size: 1.5rem;
+      }
+    }
+  }
+}
+
+.list {
+  display: flex;
+  gap: 1rem;
+  padding: 1.75rem 1rem;
+  overflow-x: auto;
+  justify-content: space-between;
+
+  @include respondCustomMin(62.5em) { 
+    justify-content: center;
+    gap: 2rem;
+  }
+}
+
+.item {
+  flex-shrink: 0;
+  border: 1px solid $color-gray-200;
+  border-radius: .625rem;
+  overflow: hidden;
+  background-color: #fff;
+  padding-bottom: 1rem;
+  position: relative;
+  width: 12rem;
+  display: flex;
+  flex-direction: column;
+
+  .image {
+    filter: brightness(1.05);
+  }
+
+  .title { 
+    font-size: 1rem;
+    font-weight: 500;
+    color: $color-gray-800;
+    text-align: center;
+    padding: .625rem 0;
+    width: 85%;
+    margin: 0 auto .75rem;
+    border-bottom: 1px solid $color-gray-200;
+
+    @include respondCustomMin(40rem) {
+      font-size: 1.125rem;
+    }
+  }
+
+  .price {
+    text-align: center;
+
+    p {
+
+      &:first-of-type {
+        color: $color-gray-400;
+        font-size: .6875rem;
+        margin-bottom: .5rem;
+
+        @include respondCustomMin(40rem) {
+          font-size: .875rem;
+        }
+      }
+
+      &:last-of-type {
+        color: $color-gray-800;
+        font-size: 1.05rem;
+        font-weight: bold;
+
+        @include respondCustomMin(40rem) {
+          font-size: 1.125rem;
+        }
+
+        span {
+          color: #626262;
+          font-size: .75rem;
+          font-weight: normal;
+
+          @include respondCustomMin(40rem) {
+            font-size: .875rem;
+          }
+        }
+      }
+    }
+  } 
+
+  .percent {
+    position: absolute;
+    bottom: .75rem;
+    left: 0;
+    padding: .125rem .5rem;
+    border-radius: 0 .625rem .625rem 0;
+    background-color: $color-red-900;
+    color: #fff;
+  }
+}

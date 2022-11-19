@@ -1,0 +1,146 @@
+@use '../abstracts' as *;
+
+.container {
+  display: none;
+  border-radius: .625rem;
+  border: 1px solid #ddd;
+  padding: 1.25rem 0 0;
+  position: relative;
+
+  @include respondCustomMin(70.625em) {
+    display: block;
+    border: none;
+    padding: 0;
+    box-shadow: 0 5px 6px rgba(#ACB4C6, .2);
+    overflow: hidden;
+  }
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  color: #3d3d3d;
+  padding: 0 1.25rem;
+
+  @include respondCustomMin(70.625em) {
+    padding: 1.125rem 2rem;
+    align-items: center;
+  }
+
+  h3 {
+    font-size: 1.05rem;
+    font-weight: 500;
+
+    @include respondCustomMin(70.625em) {
+      font-size: 1.25rem;
+    }
+  }
+
+  p {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+
+    @include respondCustomMin(70.625em) {
+      font-size: 1.25rem;
+      font-weight: 500;
+    }
+
+    &:hover .icon {
+      transform: translateX(-3px);
+    }
+  }
+}
+
+.img {
+  display: none;
+
+  @include respondCustomMin(70.625em) {
+    display: block;
+    transform: translateX(1.125rem);
+  }
+}
+
+.icon {
+  margin-right: .75rem;
+  transition: 200ms;
+}
+
+.swiperContainer {
+  width: min(90%, 63.25rem);
+  padding: 3.25rem 5px;
+  margin: 0 auto;
+
+  @include respondCustomMin(70.625em) {
+    margin: 0 3rem 0 auto;
+  }
+}
+
+.content {
+  // max-width: 63.25rem;
+  // margin: 0 auto;
+  // overflow: hidden;
+  display: flex;
+  width: 85%;
+  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
+}
+
+.list {
+  display: flex;
+  // justify-content: flex-start;
+  gap: 1rem;
+  padding: 1.5rem 1rem 2rem 1rem;
+  overflow-x: auto;
+
+  @include respondCustomMin(62.5em) { 
+    // justify-content: center;
+    gap: 2rem;
+  }
+
+  @include respondCustomMin(70.625em) {
+    padding: 3.375rem 0;
+  }
+}
+
+.btn_right,
+.btn_left {
+  display: none;
+
+  @include respondCustomMin(78.75em) {
+    display: flex;
+    align-items: center;
+    width: 6.25rem;
+    height: 6.25rem;
+    border: 1px solid #DDD;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    cursor: pointer;
+    background-color: #fff;
+  }
+
+  &:hover {
+    background-color: #f8f8f8;
+  }
+}
+
+.btn_left {
+  left: 0;
+  transform: translate(-55%, -20%);
+  justify-content: flex-start;
+  padding-right: 1.25rem;
+}
+
+.btn_right {
+  right: 0;
+  transform: translate(55%, -20%);
+  justify-content: flex-end;
+  padding-left: 1.25rem;
+
+  .arrow {
+    transform: rotate(180deg);
+  }
+}

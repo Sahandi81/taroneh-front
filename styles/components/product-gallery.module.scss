@@ -1,0 +1,46 @@
+@use '../abstracts' as *;
+
+.container {
+  // display: flex;
+  // flex-direction: column;
+
+  @include respondCustomMin(100em) {
+    margin-right: 7rem;
+  }
+}
+
+.item {
+  max-width: 25rem;
+  max-height: 25rem;
+  margin: 0 auto 1.5rem auto;
+}
+
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+
+  @include respondCustomMin(50em) {
+    flex-wrap: nowrap;
+  }
+  
+  li > div {
+    width: 3rem;
+    height: 3rem;
+    border-radius: .625rem;
+    border: 1px solid #C5C5C5;
+    cursor: pointer;
+    overflow: hidden;
+    opacity: .7;
+
+    &:hover {
+      opacity: 1;
+    }
+
+    @include respond('phone') {
+      width: 4rem;
+      height: 4rem;
+    }
+  }
+}

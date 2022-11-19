@@ -1,0 +1,29 @@
+.container {
+  
+  padding-bottom: 5rem;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  width: 95%;
+  margin: 0 auto;
+  padding: 1rem .75rem;
+  border-radius: .625rem;
+  box-shadow: 0 0 2px #DBE4F9;
+  margin-top: 2rem;
+  overflow: scroll;
+}
+
+.address {
+  display: flex;
+  flex-direction: column;
+  gap: .75rem;
+
+  textarea {
+    border-radius: .625rem;
+    resize: none;
+    border: 1px solid #C5C5C5;
+  }
+}

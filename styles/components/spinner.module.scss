@@ -1,0 +1,11 @@
+@use '../abstracts' as *;
+@use '../base/animations';
+
+.container {
+  width: 3rem;
+  height: 3rem;
+  border: 5px solid #e5e5e5;
+  border-top-color: $color-primary;
+  border-radius: 50%;
+  animation: rotate360 1s linear infinite;
+}

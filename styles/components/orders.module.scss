@@ -1,0 +1,245 @@
+@use '../abstracts' as *;
+
+.container {
+  display: none;
+
+  @include respondCustomMin(56.875em) {
+    display: block;
+  }
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  padding: 2rem 2.5rem 2rem 1.5rem;
+  background-color: #fdfdfd;
+  border-bottom: 5px solid #EAEEF3;
+
+  h3 {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #626262;
+
+    &:nth-child(1), 
+    &:nth-child(2), 
+    &:nth-child(3) {
+      flex: .25;
+    }
+
+    &:nth-child(4) {
+      flex: .3;
+      text-align: center;
+    }
+  }
+}
+
+.body {
+  padding-bottom: 10rem;
+  display: flex;
+  // align-items: center;
+  justify-content: center;
+  flex-direction: column-reverse;
+}
+
+.master {
+  display: flex;
+  align-items: center;
+  padding: 1.25rem 2.5rem 1.25rem 1.5rem;
+  border-bottom: 1px solid #EAEEF3;
+  
+  h4 {
+    font-size: 1.125rem;
+    font-weight: normal;
+    color: #626262;
+
+    &:nth-child(1),
+    &:nth-child(2),
+    &:nth-child(3) {
+      flex: .25;
+    }
+  }
+
+  .actions {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex: .3;
+    text-align: center;
+
+    >button>span {
+      display: flex;
+      align-items: center;
+      gap: .5rem;
+    }
+
+    .icon {
+      transform: rotate(180deg) translateY(2px);
+    }
+  }
+}
+
+.detail {
+  padding: 3rem 2.5rem;
+  background-color: rgb(248, 248, 248, .8);
+}
+
+.recepient {
+  background-color: #fff;
+  border-radius: .625rem;
+  border: 1px solid #D9D9D9;
+  margin-bottom: 3rem;
+
+  .recepient_title {
+    padding: 1.5rem 2.75rem;
+    border-bottom: 1px solid #D9D9D9;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #013044;
+  }
+
+  .recepient_content {
+    padding: 1.5rem 2.75rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem 2rem;
+
+    > div > span {
+      white-space: nowrap;
+      &:first-of-type {
+        color: #8E8E8E;
+      }
+
+      &:last-of-type {
+        color: #626262;
+        font-weight: 500;
+        margin-right: .75rem;
+
+        &.delivery {
+          color: $color-primary;
+        }
+      }
+    }
+  }
+
+  
+}
+
+.products {
+  background-color: #fff;
+  border-radius: .625rem;
+  border: 1px solid #D9D9D9;
+
+  .products_title {
+    padding: 1.5rem 2.75rem;
+    border-bottom: 1px solid #D9D9D9;
+    font-weight: 500;
+    color: #013044;
+  }
+
+  .products_content {
+    padding: 3rem 2.75rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 3rem;
+
+    .product {
+      flex-shrink: 0;
+      width: 14.375rem;
+      border-radius: .625rem;
+      background-color: #fff;
+      box-shadow: 0 0 1rem rgba(0 0 0 / 10%);
+      padding: 1rem;
+      text-align: center;
+      position: relative;
+      transition: 200ms;
+    
+      &_header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+    
+      &_rating {
+        color: #8A8A8A;
+      }
+    
+      &_image {
+        margin-top: .25rem;
+      }
+    
+      &_name {
+        margin-top: .25rem;
+        padding-bottom: .75rem;
+        border-bottom: 1px solid #D9D9D9;
+        font-size: 1.125rem;
+        font-weight: 500;
+        color: #393939;
+      }
+    
+      &_price {
+        margin-top: .75rem;
+    
+        span {
+          display: block;
+          font-size: .875rem;
+          color: #959595;
+    
+          &:last-of-type {
+            color: $color-primary;
+            font-size: 1.25rem;
+            font-weight: bold;
+            padding-top: .25rem;
+    
+            small {
+              font-size: .875rem;
+              font-weight: normal;
+              color: #626262;
+            }
+          }
+        }
+      }
+    
+      &:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 5px 1rem rgba(0 0 0 / 20%);
+      }
+    }
+  }
+}
+
+.order_tracking {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 3rem;
+
+  .step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    p {
+      margin-top: 1rem;
+      color: #626262;
+      white-space: nowrap;
+
+      &.ative_step {
+        color: #17B0F1;
+        font-weight: 500;
+      }
+    }
+  }
+
+  .step_image {
+    width: 8.125rem;
+    height: 7.6875rem;
+  }
+
+  .order_tracking_line {
+    width: 100%;
+    height: 1px;
+    background-color: #bcbcbc;
+    transform: translateY(-1rem);
+  }
+}

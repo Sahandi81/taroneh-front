@@ -1,0 +1,279 @@
+@use '../abstracts' as *;
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 3.75rem;
+  justify-content: space-between;
+  width: 100%;
+  padding-bottom: 4rem;
+  align-items: flex-start;
+
+  @include respondCustomMin(70.625em) {
+    margin-top: 13rem;
+    padding-bottom: 0;
+    flex-direction: row;
+  }
+}
+
+.shipping {
+  width: 100%;
+}
+
+.body {
+  border-radius: .625rem;
+  box-shadow: 0 2px 4px #DBE4F9;
+  overflow: hidden;
+  transform: translateY(-.8rem);
+  background-color: #fff;
+
+  > h1 {
+    font-size: .9375rem;
+    font-weight: bold;
+    text-align: center;
+    color: #393939;
+    padding: 2rem 0;
+    background-color: #F4F6F9;
+    border-bottom: 5px solid #F3F3F3;
+
+    @include respond('tab-port') {
+      font-size: 1.125rem;
+      text-align: start;
+      padding: 2.4375rem 3.625rem;
+    }
+  }
+
+  .content {
+    padding: 1rem .75rem 2.5rem;
+    display: flex;
+    flex-direction: column;
+
+    @include respond('phone') {
+      padding: 2rem 3.625rem 4.1875rem;
+    }
+
+    @include respondCustomMin(70.625em) {
+      padding: 2rem 1.5rem;
+    }
+
+    @include respondCustomMin(85.375em) {
+      padding: 2rem 3.625rem 4.1875rem;
+    }
+
+    > button {
+      width: min(97%, 19rem);
+      padding: .75rem 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: .5rem;
+      align-self: center;
+
+      @include respond('phone') {
+        padding: .9375rem 0;
+        font-size: 1.125rem;
+        align-self: flex-end;
+      }
+    }
+  }
+}
+
+.box {
+  border-radius: .625rem;
+  border: 1px solid #D9D9D9;
+  overflow: hidden;
+  margin-bottom: 2.25rem;
+
+  .title {
+    padding: 1rem;
+    color: #393939;
+    font-size: .875rem;
+    font-weight: 500;
+    border-bottom: 1px solid #D9D9D9;
+
+    @include respond('tab-port') {
+      padding: 1.625rem 1.5rem;
+      text-align: start;
+      font-size: 1rem;
+    }
+  }
+
+  > div {
+    padding: 1rem;
+
+    @include respond('tab-port') {
+      padding: 1.75rem;
+    }
+  }
+
+  .userInfo {
+    padding: .75rem;
+    display: grid;
+    gap: 1rem;
+
+    @include respond('tab-port') {
+      padding: 2rem;
+      grid-template-columns: 1fr 1fr;
+    }
+
+    @include respondCustomMin(70.625em) {
+      padding: 1rem;
+      grid-template-columns: 1fr;
+    }
+
+    @include respondCustomMin(85.375em) {
+      padding: 2rem;
+      grid-template-columns: 1fr 1fr;
+    }
+
+    span:first-of-type {
+      color: #8E8E8E;
+      margin-left: .5rem;
+      font-size: .8125rem;
+
+      @include respond('tab-port') {
+        font-size: 1rem;
+        margin-left: 4rem;
+        grid-column: 1;
+      }
+    }
+
+    span:last-of-type {
+      color: #393939;
+      font-weight: 500;
+      font-size: .875rem;
+
+      @include respond('tab-port') {
+        font-size: 1rem;
+        grid-column: 2;
+      }
+
+      @include respondCustomMin(40em) {
+        grid-column: 1;
+      }
+    }
+  }
+
+  .address {
+    display: flex;
+    flex-direction: column;
+    gap: 2.125rem;
+    position: relative;
+    
+    > div {
+      display: flex;
+      gap: 1.5rem;
+      align-items: center;
+      
+      p {
+        color: #969696;
+        font-size: .8125rem;
+        line-height: 1.6;
+        max-width: 100ch;
+
+        @include respond('tab-port') {
+          font-size: .9375rem;
+        }
+      }
+    }
+
+    button {
+      font-weight: 500;
+      width: min(97%, 15rem);
+      align-self: center;
+
+      @include respondCustomMin(103.125em) {
+        position: absolute;
+        top: 50%;
+        left: 2.5rem;
+        transform: translateY(-50%);
+        padding: .8rem 2.5rem;
+      }
+    }
+  }
+
+  .days {
+    display: flex;
+    padding: 0;
+
+    .title {
+      border-bottom: 1px solid #D9D9D9;
+      font-size: .9375rem;
+      padding: 1.25rem 0 1rem;
+      width: 100%;
+      cursor: pointer;
+      text-align: center;
+
+      &:first-of-type {
+        border-left: 1px solid #D9D9D9;
+      }
+
+      @include respond('tab-port') {
+        font-size: 1rem;
+        padding: 1.625rem 0 1.5rem;
+      }
+    }
+
+    .title_active {
+      color: $color-primary;
+      border-bottom: 4px solid $color-primary;
+    }
+  }
+
+  .clock {
+    display: flex;
+    flex-direction: column;
+    gap: 1.75rem;
+
+    @include respond('phone') {
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-around;
+    }
+    
+    > div {
+      display: flex;
+      gap: 1.5rem;
+      align-items: center;
+
+      p {
+        color: #969696;
+        font-size: .8125rem;
+        line-height: 1.6;
+        max-width: 100ch;
+
+        @include respond('tab-port') {
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+
+  .note {
+    padding: 0;
+
+    .textarea {
+      border: none;
+      padding: 1rem;
+      font-size: .8125rem;
+      width: 98% !important;
+      resize: none;
+      color: #393939;
+
+      @include respond('tab-port') {
+        font-size: 1rem;
+      }
+
+      &::placeholder {
+        color: #bcbcbc;
+        font-size: .8125rem;
+
+        @include respond('tab-port') {
+          font-size: 1rem;
+        }
+      }
+
+      &:focus {outline: none}
+    }
+  }
+}

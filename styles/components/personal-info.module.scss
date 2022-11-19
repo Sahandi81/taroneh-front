@@ -1,0 +1,238 @@
+@use '../abstracts' as *;
+
+.container {
+  border-radius: 0.625rem;
+  box-shadow: 0 2px 4px rgba(135, 33, 204, 0.04);
+  overflow: hidden;
+  margin-bottom: 5rem;
+
+  @include respondCustomMin(53.75em) {
+    margin-bottom: 0;
+  }
+}
+
+.header {
+  display: flex;
+  padding: 0 1.5rem;
+  background-color: #f4f6f9;
+  border-bottom: 5px solid #f3f3f3;
+  gap: 3rem;
+  position: relative;
+
+  @include respondCustomMin(53.75em) {
+    padding: 0 2.75rem;
+  }
+
+  h3 {
+    color: #626262;
+    font-size: 1.125rem;
+    font-weight: normal;
+    cursor: pointer;
+    padding: 1.75rem 0;
+    white-space: nowrap;
+  }
+
+  .active {
+    font-weight: 500;
+    color: #17b0f1;
+    position: relative;
+  }
+
+  .active_line {
+    width: 107px;
+    height: 5px;
+    background-color: #17b0f1;
+    border-radius: 1rem;
+    position: absolute;
+    bottom: -5px;
+    transition: 200ms ease-in-out;
+    transform: translateX(20px);
+
+    @include respondCustomMin(53.75em) {
+      transform: translateX(0);
+    }
+  }
+}
+
+.body {
+  background-color: #fff;
+  padding: 2rem 1.5rem;
+
+  @include respondCustomMin(53.75em) {
+    padding: 2rem 2.75rem;
+  }
+}
+
+.user_info {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+
+  @include respondCustomMin(53.75em) {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(17.5rem, 28rem));
+    align-items: center;
+    gap: 4.1875rem 7rem;
+    padding: 1rem 0;
+  }
+
+  > button {
+    justify-self: flex-end;
+    padding: 0.8rem 3rem !important;
+  }
+}
+
+.change_password {
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+
+    .form_input {
+      width: min(97%, 28rem) !important;
+
+      @include respondCustomMin(53.75em) {
+        width: min(90%, 28rem) !important;
+      }
+
+      input {text-align: center;}
+    }
+
+    > button {
+      padding: 0.8rem 3rem !important;
+    }
+  }
+}
+
+.form_input {
+  position: relative;
+  label {
+    font-size: 0.9375rem;
+    font-weight: 500;
+    color: #5d5d5d;
+    display: block;
+    margin-bottom: 0.5rem;
+    padding-right: 0.5rem;
+
+    @include respondCustomMin(53.75em) {
+      margin-bottom: 0.7rem;
+    }
+  }
+
+  input {
+    padding: 0.75rem 1rem;
+    border-radius: 10rem;
+    border: 1px solid #c5c5c5;
+    color: #393939;
+    font-weight: 500;
+    width: 100%;
+
+    &.error_state {
+      border-color: #db0000;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  .error {
+    color: #db0000;
+    padding-right: 0.5rem;
+  }
+
+  .verified {
+    position: absolute;
+    right: .35rem;
+    top: 2.25rem;
+    padding: .46rem .75rem;
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    border-radius: 10rem;
+    background-color: rgba($color-primary, .3);
+    color: $color-primary;
+
+    @include respondCustomMin(53.75em) {
+      top: 2.465rem;
+    }
+  }
+}
+
+.avatar_upload {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+
+  label {
+    color: #17b0f1;
+    font-size: 0.9375rem;
+    font-weight: 500;
+    cursor: pointer;
+  }
+
+  input {
+    display: none;
+  }
+}
+
+.gender {
+  display: flex;
+  align-items: center;
+
+  p {
+    color: #5d5d5d;
+    font-size: 0.9375rem;
+    font-weight: 500;
+
+    > span {
+      color: #a4a4a4;
+      font-size: 0.875rem;
+      font-weight: 300;
+      margin-right: 0.75rem;
+    }
+  }
+
+  .radio {
+    display: none;
+
+    &:checked + .custom_radio::after {
+      display: block;
+    }
+  }
+
+  .custom_radio {
+    margin: 0 3rem 0 0.5rem;
+    cursor: pointer;
+    color: #5d5d5d;
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    &::before {
+      content: '';
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 1.125rem;
+      height: 1.125rem;
+      border-radius: 50%;
+      border: 1px solid $color-primary;
+      transform: translateX(10px);
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      display: none;
+      width: 0.625rem;
+      height: 0.625rem;
+      background-color: $color-primary;
+      border-radius: 50%;
+      transform: translateX(6px);
+    }
+  }
+}
+
+
