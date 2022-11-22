@@ -12,11 +12,12 @@ import ServiceCaller from "@/helpers/serviceCall";
 import { useDispatch, useSelector } from 'react-redux';
 import { selectUser, setCateg, setCredentials } from "@/features/auth/authSlice";
 import { useEffect } from 'react';
-import { NEXT_URL } from '../config';
+// import { NEXT_URL } from '../config';
 import { useGetUserDetailsQuery } from '@/app/services/apiSlice';
 
 function Home({categories,incredibleOffers, specialSale, newProducts, catering}) {
   const dispatch = useDispatch();
+  // console.log(categories,incredibleOffers, specialSale, newProducts, catering)
 	const { data: userDetails, isLoading } = useGetUserDetailsQuery();
   const user = useSelector(selectUser);
 	useEffect(()=>{
@@ -42,8 +43,8 @@ function Home({categories,incredibleOffers, specialSale, newProducts, catering})
       <Hero />
       <FeaturesList />
       <Category categories={categories} />
-      {incredibleOffers.success && incredibleOffers.products.length > 0 && <IncredibleOffers offers={incredibleOffers}/>}
-      {specialSale.length > 0 ? <SpecialSale products={specialSale} />:null}
+      {incredibleOffers?.success && incredibleOffers.products.length > 0 && <IncredibleOffers offers={incredibleOffers}/>}
+      {specialSale?.length > 0 ? <SpecialSale products={specialSale} />:null}
       <NewProducts products={newProducts} />
       {fetchCarringProducts.length > 0 ? <ReceptionBoxes products={fetchCarringProducts} />:null}
       <Faq />
