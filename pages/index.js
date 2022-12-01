@@ -56,20 +56,20 @@ function Home({categories,incredibleOffers, specialSale, newProducts, catering})
 // This gets called on every request
 export async function getServerSideProps() {
     // Fetch data from external API
-    // const res = await ServiceCaller('api/categories');
-    // const categories =  res?.details?.data;
+    const res = await ServiceCaller('api/categories');
+    const categories =  res?.details?.data;
 
-    // const incredibleOffers = await ServiceCaller('api/amazing_offer');
+    const incredibleOffers = await ServiceCaller('api/amazing_offer');
 
-    // const specialSale = await ServiceCaller('api/special_sales');
+    const specialSale = await ServiceCaller('api/special_sales');
 
-    // const newProducts = await ServiceCaller('api/shop');
+    const newProducts = await ServiceCaller('api/shop');
 
-    // const catering = await ServiceCaller('api/catering')
+    const catering = await ServiceCaller('api/catering')
     
-    // // console.log(, "searchResult")
-    // return { props: { categories,incredibleOffers: incredibleOffers, specialSale: specialSale?.list?.data, newProducts: newProducts?.data, catering: catering?.data } }
+    // console.log(, "searchResult")
+    return { props: { categories,incredibleOffers: incredibleOffers, specialSale: specialSale?.list?.data, newProducts: newProducts?.data, catering: catering?.data } }
   
-    return { props: {categories:[],incredibleOffers: [], specialSale: [], newProducts: [], catering: [] } }
+    // return { props: {categories:[],incredibleOffers: [], specialSale: [], newProducts: [], catering: [] } }
   }
 export default Home;
