@@ -55,6 +55,7 @@ export default function ProductBox({
     pack = `قیمت هر دانه  `
   }}
 	return (
+		<Link href={`/products/${id}`} passHref>
 		<div className={styles.container} onClick={handleClick}>
 			<div className={styles.header}>
 				<div className={styles.rating}>
@@ -84,7 +85,7 @@ export default function ProductBox({
 						blurDataURL={img}
 					/>
 				</div>
-				<Link href={`/products/${id}`} passHref>
+				
 					<div className={styles.content}>
 						<h3 className={styles.title}>{name}</h3>
 						<div className={styles.price}>
@@ -92,15 +93,16 @@ export default function ProductBox({
 							{entres?entres[0][0].package["1000"]?"قیمت هر کیلو":pack:"قیمت هر کیلو"}
 							</p>
 							<p>
-							{entres?entres[0][0].package["1000"]?formatPrice(entres[0][0].package["1000"])
+							{entres?entres[0][0].package["1000"]?
+							formatPrice(entres[0][0].package["1000"])
 							:formatPrice(calculate[0][1]):"600000"}
 								 <small>تومان</small>
 							</p>
 						</div>
 						{percent > 0 && <div className={styles.percent}>{percent} %</div>}
 					</div>
-				</Link>
 			</>
 		</div>
+				</Link>
 	);
 }

@@ -100,8 +100,8 @@ export default function LoginStep3({ phone,  setStep ,sendVerificationCode}) {
             phone: phone.value,
             code: vCode
         }).unwrap();
-        // console.log(data);
-        if(data.success) {
+        console.log(data);
+        if(data.token) {
           // console.log(data)
         //  await completeProfile({
         //   f_name: "کاربر",
@@ -124,6 +124,12 @@ export default function LoginStep3({ phone,  setStep ,sendVerificationCode}) {
           token:data.token,
           photos: ['avatar.png'], token: data.token }));
           setTimeout(() => router.replace("/"), 300);
+        }else{
+          setNotification({
+            show: true,
+            status: "error",
+            message: 'کد وارد شده صحیح نمی باشد',
+          });
         }
       // } catch (error) {
       //   setNotification({

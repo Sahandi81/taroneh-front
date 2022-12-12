@@ -104,7 +104,7 @@ export default function LoginStep1({ handleClick }) {
 				username: username.value,
 				password: password.value,
 			}).unwrap().then(res=>{
-				console.log(res)
+				// console.log(res)
 
 				if (res.success) {
 					// let dataForm = {...res.user_details, address:[res.user_details.address[res.user_details.address.length -1].address[0]]}
@@ -142,6 +142,12 @@ export default function LoginStep1({ handleClick }) {
 				});
 
 				}
+			}).catch(er=>{
+				setNotification({
+					show: true,
+					status: "error",
+					message: MSG_INVALID_CREDENTIALS,
+				});
 			})
 		
 		

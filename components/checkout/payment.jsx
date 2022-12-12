@@ -31,7 +31,7 @@ export default function Payment() {
 	const [costPost] = useCostPostMutation();
 
 	const theWayHandller = (e, name)=>{
-		console.log(e)
+		// console.log(e)
 		if(name === 'motor' && e.target.checked){
 			setTheWay(30000) 
 		}else if(name === 'post' && e.target.checked){

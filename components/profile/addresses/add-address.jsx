@@ -12,6 +12,7 @@ export default function AddAddress({ handleModal }) {
 
 	const user = useSelector(selectUser);
 
+	// console.log(user)
 	const [city, setCity] = useState({
 		value: "",
 		error: "",
@@ -80,10 +81,10 @@ export default function AddAddress({ handleModal }) {
 			lng: '45.7236432',
 			id: Date.now() *1
 		}
-
-		 if (user.address) {
+		if (user) {
+			//  console.log(data)
 			  addAddress(data).unwrap().then((res)=>{
-				  console.log(res)
+				//   console.log(res)
 			// await setCompeletProfile( {...user, address: res.data});
 				dispatch(setCredentials({...user, address: res.data}))
 			 }).catch(er=>console.log(er));
@@ -169,7 +170,7 @@ export default function AddAddress({ handleModal }) {
 
 			<div
 				style={{
-					order: "8",
+					order: "4",
 				}}
 			>
 				<Button

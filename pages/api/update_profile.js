@@ -13,21 +13,21 @@ export default async function updateProfile(req, res) {
     const { token } = cookie.parse(req.headers.cookie);
 
     const {  address } = req.body;
-  //  console.log(me,address)
-
+    
     const backendRes = await fetch(`https://api.taroneh.ir/api/panel/update_profile`,{
-        method:'PATCH',
-        headers:{
-          'Content-Type': 'application/json',
+      method:'PATCH',
+      headers:{
+        'Content-Type': 'application/json',
         'Accept': 'application/json',
         'Authorization': `Bearer ${token}`
-        },
-        body: JSON.stringify(address)
+      },
+      body: JSON.stringify(address)
     })
-
+    
     const data = await backendRes.json();
-
-
+    
+    console.log(data)
+    console.log(JSON.stringify(address), ' ',token)
     if (backendRes.ok) {
     
       

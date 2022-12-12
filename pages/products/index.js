@@ -222,7 +222,7 @@ export async function getServerSideProps({ query }) {
     if (category) {
         const res = await ServiceCaller(`api/categories?q=${category}`);
         products =res.details.sub_category;
-        console.log(res)
+        // console.log(res)
         title = `${res.details.name} | بازارچه خشکبار طارونه`;
     }
     if (s_category) {

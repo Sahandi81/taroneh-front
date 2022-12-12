@@ -126,7 +126,7 @@ export default function UserInfo() {
       }, 3000);
       
     } catch (error) {
-      console.log(error)
+      // console.log(error)
       setNotification({
         show: true,
         status: "error",

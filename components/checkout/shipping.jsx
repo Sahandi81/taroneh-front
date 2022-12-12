@@ -160,7 +160,7 @@ export default function Shipping() {
 			[name]: user.address.filter(el=> el._id  === value ),
 		}));
 	};
-	console.log(user)
+	// console.log(user)
 	return (
 		<section className="section">
 			<div className={styles.container}>

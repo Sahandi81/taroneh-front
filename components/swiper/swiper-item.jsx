@@ -20,7 +20,7 @@ export default function SwiperItem({ id, name, img,slug, price,amount, percent,p
   const [addToWishList, { isLoading }] = useAddToWishListMutation();
   const [deleteWishList] = useDeleteWishListMutation();
   const {data } = useGetWishListQuery()
-  console.log(data, 'aihdi')
+  // console.log(data, 'aihdi')
 	const productInWishList = useSelector((state) =>
 		isProductInWishList(state, id)
 	);
@@ -31,10 +31,10 @@ export default function SwiperItem({ id, name, img,slug, price,amount, percent,p
 		try {
       if(!productInWishList){
 			await addToWishList(id).unwrap().then(res=>{
-        console.log(res)
+        // console.log(res)
       }).catch(er=>console.log(er));
     }else{
-      console.log('duihdysgu')
+      
       await deleteWishList({wish_list_id: id})
       // useGetWishListQuery()
     }

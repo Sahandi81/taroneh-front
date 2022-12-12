@@ -15,6 +15,7 @@ export default async function verifyCode(req, res) {
     });
 
     const data = await backendRes.json();
+    // console.log(data)
     if (backendRes.ok) {
       // Set cookie
       res.setHeader(

@@ -23,7 +23,7 @@ export default async function login(req, res) {
     });
 
     const data = await backendRes.json();
-
+    console.log(data, bodyData)
     if (backendRes.ok) {
       // Set cookie
       await res.setHeader(

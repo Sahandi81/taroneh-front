@@ -29,8 +29,8 @@
   position: relative;
   z-index: 12000;
   border-radius: 1.25rem;
-  overflow: hidden;
-  height: 40rem;
+  overflow: auto;
+  height: 35rem;
   @include respond('phone') {
     padding: .75rem 2rem 2rem;
     width: auto;
