@@ -22,6 +22,7 @@ export default async function buy(req, res) {
     });
 
     const data = await backendRes.json();
+    console.log(data)
     if (backendRes.ok) {
       res.status(200).json({ data });
     } else {

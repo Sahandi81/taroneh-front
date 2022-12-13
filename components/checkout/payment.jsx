@@ -56,21 +56,21 @@ export default function Payment() {
 	const handleClickPayment = () => {
 		// console.log(cartDetails,"cartDetails" ,cartItems)
 				// console.log(cartDetails, cartItems)
-				if(theWay === 0){
-					setNotification({
-						show: true,
-						status: "error",
-						message: 'طریقه ارسال را انتخاب نکردید',
-					});
-					setTimeout(() => {
-						setNotification({
-							show: false,
-							status: null,
-							message: ''
-						  })
-					}, 3000);
-					return;
-				}
+				// if(theWay === 0){
+				// 	setNotification({
+				// 		show: true,
+				// 		status: "error",
+				// 		message: 'طریقه ارسال را انتخاب نکردید',
+				// 	});
+				// 	setTimeout(() => {
+				// 		setNotification({
+				// 			show: false,
+				// 			status: null,
+				// 			message: ''
+				// 		  })
+				// 	}, 3000);
+				// 	return;
+				// }
 		if(cartItems.length > 0){
 		buy({
 			details: cartDetails,
