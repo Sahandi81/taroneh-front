@@ -27,11 +27,18 @@ export default function Product({ product, relatedProducts }) {
 	useEffect(()=>{
 		delete product.types[0][0].package.inventory
 		const value = Object.entries(product.types[0][0].package);
-
+			// console.log(value)
+			let lng = value.length - 1;
+			 value.map((mp, index)=>{
+				 if(mp[0] === '1000'){
+					 lng = index;
+				 }
+			 }) 
+			 console.log(lng)
 			setQuantity(1);
-			setWeight(value[0][0]);
-			setPrice(value[0][1]);
-			setOldPrice(value[0][1]);
+			setWeight(value[lng][0]);
+			setPrice(value[lng][1]);
+			setOldPrice(value[lng][1]);
 	},[product.types[0][0].package])
 
 	useEffect(() => {
