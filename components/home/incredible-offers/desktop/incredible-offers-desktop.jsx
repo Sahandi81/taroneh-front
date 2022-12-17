@@ -7,7 +7,7 @@ import imageLoader from '@/helpers/imageLoader';
 
 export default function IncredibleOffersDesktop({offers}) {
   const [activeIndex, setActiveIndex] = useState(1);
-  const {products, expire, percent, } = offers;
+  const {products, expire, percent } = offers;
   // console.log(expire - Date.now())
 
   const entres = products[activeIndex - 1].types
@@ -41,7 +41,8 @@ export default function IncredibleOffersDesktop({offers}) {
     <section className='section'>
       <div className={styles.container}>
         <h2 className={styles.title}>پیشنهادات شگفت انگیز</h2>
-        <IncredibleOffersList activeIndex={activeIndex} setActiveIndex={setActiveIndex} items={offers}/>
+        <IncredibleOffersList activeIndex={activeIndex}
+         setActiveIndex={setActiveIndex} percent={percent} items={offers}/>
         
         <div className={styles.timer}>
           <p>زمان باقی مانده تا پایان سفارش</p>

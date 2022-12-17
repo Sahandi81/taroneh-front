@@ -26,7 +26,7 @@ export default function Hero() {
         </div>
       
       <h1 className={styles.title}>
-        <span className={styles.title_main}>بازارچه خشکبار طارونه</span>
+        <span className={styles.title_main}>بازار آجیل و خشکبار طارونه</span>
         <span className={styles.title_sub}>از بازار تا خونه راهی نیست</span>
       </h1>
     </div>

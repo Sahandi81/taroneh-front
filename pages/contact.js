@@ -3,7 +3,7 @@ import Contact from '@/components/contact/contact'
 
 export default function ContactPage() {
   return (
-    <Layout title='تماس با ما | بازارچه خشکبار طارونه' hasHeader hasFooter hasDescription hasKeywords>
+    <Layout title='تماس با ما | بازار آجیل و خشکبار طارونه' hasHeader hasFooter hasDescription hasKeywords>
       <Contact />
     </Layout>
   )

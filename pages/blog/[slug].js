@@ -9,7 +9,7 @@ export default function Blog({ posts }) {
   
   return (
     <Layout
-      title='بلاگ | بازارچه خشکبار طارونه'
+      title='بلاگ | بازار آجیل و خشکبار طارونه'
       hasHeader
       hasDescription
       hasKeywords

@@ -38,7 +38,7 @@ function MyApp({ Component, pageProps }) {
   return (
     <Fragment>
       <Head>
-        <title>بازارچه خشکبار طارونه</title>
+        <title> طارونه</title>
         <meta charSet='utf-8' />
         <meta name='viewport' content='width=device-width, initial-scale=1' />
         <meta name='enamad' content='248475' />

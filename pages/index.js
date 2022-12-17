@@ -17,7 +17,7 @@ import { useGetUserDetailsQuery } from '@/app/services/apiSlice';
 
 function Home({categories,incredibleOffers, specialSale, newProducts, catering}) {
   const dispatch = useDispatch();
-  // console.log(categories,incredibleOffers, specialSale, newProducts, catering)
+  console.log(categories,incredibleOffers, specialSale, newProducts, catering)
 	const { data: userDetails, isLoading } = useGetUserDetailsQuery();
   const user = useSelector(selectUser);
 	useEffect(()=>{
@@ -39,7 +39,7 @@ function Home({categories,incredibleOffers, specialSale, newProducts, catering})
   const fetchCarringProducts =[];
     catering.map(el=> fetchCarringProducts.push(el.product))
   return (
-    <Layout hasHeader hasFooter hasDescription hasKeywords >
+    <Layout title={'بازار آجیل و خشکبار طارونه'} hasHeader hasFooter hasDescription hasKeywords >
       <Hero />
       <FeaturesList />
       <Category categories={categories} />
@@ -57,7 +57,7 @@ function Home({categories,incredibleOffers, specialSale, newProducts, catering})
 export async function getServerSideProps() {
     // Fetch data from external API
     const res = await ServiceCaller('api/categories');
-    const categories =  res?.details?.data;
+    const categories =  res?.details?.data.length > 0?res?.details?.data:[];
 
     const incredibleOffers = await ServiceCaller('api/amazing_offer');
 
@@ -67,8 +67,10 @@ export async function getServerSideProps() {
 
     const catering = await ServiceCaller('api/catering')
     
-    // console.log(, "searchResult")
-    return { props: { categories,incredibleOffers: incredibleOffers, specialSale: specialSale?.list?.data, newProducts: newProducts?.data, catering: catering?.data } }
+    // console.log()
+     return { props: { categories,incredibleOffers:
+       incredibleOffers, specialSale: specialSale?.list?.data
+       , newProducts: newProducts?.data, catering: catering?.data } }
   
     // return { props: {categories:[],incredibleOffers: [], specialSale: [], newProducts: [], catering: [] } }
   }

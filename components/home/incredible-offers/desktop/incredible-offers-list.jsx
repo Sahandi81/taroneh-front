@@ -4,7 +4,7 @@ import IncredibleOffersItem from './incredible-offers-item';
 import styles from '@/styles/components/incredible-offers-desktop.module.scss';
 import ServiceCaller from '@/helpers/serviceCall';
 
-export default function IncredibleOffersList({ items, activeIndex, setActiveIndex }) {
+export default function IncredibleOffersList({ items, activeIndex, setActiveIndex, percent }) {
   
   
    useEffect(() => {
@@ -21,6 +21,7 @@ export default function IncredibleOffersList({ items, activeIndex, setActiveInde
           key={item._id}
           rowNumber={index + 1}
           isActive={index + 1 === activeIndex ? true : false}
+          percent={percent}
           {...item}
         />
       ))}

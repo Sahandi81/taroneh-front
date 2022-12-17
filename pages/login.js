@@ -18,7 +18,7 @@ export default function LoginPage() {
   }, [router, user])
 
   return (
-    <Layout title='ورود/ثبت&zwnj;نام | بازارچه خشکبار طارونه'>
+    <Layout title='ورود/ثبت&zwnj;نام | بازار آجیل و خشکبار طارونه'>
       <Login />
     </Layout>
   );

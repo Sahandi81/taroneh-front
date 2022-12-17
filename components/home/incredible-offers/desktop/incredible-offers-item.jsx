@@ -10,7 +10,7 @@ export default function IncredibleOffersItem({_id,title, rowNumber, name, percen
     <div onClick={()=>goProductHandller()} className={`${styles.item} ${isActive ? styles.item_active : ''}`}>
       <p>{rowNumber}</p>
       <h4>{title}</h4>
-      <p>{percent?percent:10} %</p>
+      <p>{percent} %</p>
     </div>
   )
 }

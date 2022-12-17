@@ -7,7 +7,7 @@ import { API_URL, NEXT_URL } from '@/config/index';
 
 export default function RegisterPage() {
   return (
-    <Layout title='ورود/ثبت&zwnj;نام | بازارچه خشکبار طارونه'>
+    <Layout title='ورود/ثبت&zwnj;نام | بازار آجیل و خشکبار طارونه'>
       <Register />
     </Layout>
   );

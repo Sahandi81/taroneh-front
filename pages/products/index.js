@@ -199,7 +199,7 @@ export async function getServerSideProps({ query }) {
 
     const { type, category, s_category ,page} = query;
     let products = []
-    let title = 'بازارچه خشکبار طارونه';
+    let title = 'بازار آجیل و خشکبار طارونه';
     let length = 'none';
     if (type) {
         switch (type) {
@@ -207,13 +207,13 @@ export async function getServerSideProps({ query }) {
                 const res = await ServiceCaller('api/special_sales');
                 products = res.list.data;
 
-                title = `فروش ویژه | بازارچه خشکبار طارونه`;
+                title = `فروش ویژه | بازار آجیل و خشکبار طارونه`;
                 break;
             }
             case "new-products": {
                 const res = await ServiceCaller('api/shop');
                 products = res.data;
-                title = `جدیدترین محصولات | بازارچه خشکبار طارونه`;
+                title = `جدیدترین محصولات | بازار آجیل و خشکبار طارونه`;
                 break;
             }
         }
@@ -223,12 +223,12 @@ export async function getServerSideProps({ query }) {
         const res = await ServiceCaller(`api/categories?q=${category}`);
         products =res.details.sub_category;
         // console.log(res)
-        title = `${res.details.name} | بازارچه خشکبار طارونه`;
+        title = `${res.details.name} | بازار آجیل و خشکبار طارونه`;
     }
     if (s_category) {
         const res = await ServiceCaller(`api/shop?s_category=${s_category}&page=${page?page: 1}&per_page=8`);
         products = res.data;
-        // title = `${res.category.name} | بازارچه خشکبار طارونه`;
+        // title = `${res.category.name} | بازار آجیل و خشکبار طارونه`;
         length = res.total
 
     }

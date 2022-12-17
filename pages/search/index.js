@@ -6,9 +6,9 @@ export default function SearchPage({ search, searchResult }) {
 
   let title;
   if (search) {
-    title = `جستجو برای ${search} | بازارچه خشکبار طارونه`;
+    title = `جستجو برای ${search} | بازار آجیل و خشکبار طارونه`;
   } else {
-    title = `جستجو | بازارچه خشکبار طارونه`;
+    title = `جستجو | بازار آجیل و خشکبار طارونه`;
   }
 
   return (

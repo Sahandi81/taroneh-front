@@ -12,10 +12,13 @@ async function ServiceCaller(url, options = {}) {
         })
             .then(response => response.json())
             .then(response => {
-                resolve(response);
+                console.log(response)
+                resolve(response, url);
             })
             .catch(error => {
-                reject(error);
+                console.log(error, url)
+                // reject(error);
+                return
             });
     });
 }

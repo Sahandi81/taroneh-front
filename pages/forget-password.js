@@ -3,7 +3,7 @@ import ForgetPassword from "@/components/login-and-register/forget-password/forg
 
 export default function ForgetPasswordPage() {
   return (
-    <Layout title='فراموشی رمز عبور | بازارچه خشکبار طارونه'>
+    <Layout title='فراموشی رمز عبور | بازار آجیل و خشکبار طارونه'>
       <ForgetPassword />
     </Layout>
   )
