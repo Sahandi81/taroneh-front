@@ -68,7 +68,7 @@ export default function Products({ products, title, length, pg}) {
         router.push('products?type='+ queryTab)
     }
 }
-    
+    console.log(products)
     return (
         <Layout hasHeader hasFooter title={title}>
             <section className='section'>
@@ -138,8 +138,8 @@ export default function Products({ products, title, length, pg}) {
                                         name={product.product_info.title}
                                         img={product.product_info.photos.length ? `/storage/${product.product_info.code}/${product.product_info.photos[0]}` : '/storage/0/logo.png'}
                                         price={product.product_info.amount}
-                                        types={null}
-                                        percent='0'
+                                        types={product.types}
+                                        percent={product.amount?product.amount:'0'}
                                     />
                                 } else {
                                     return <ProductBox
@@ -149,7 +149,7 @@ export default function Products({ products, title, length, pg}) {
                                         img={product.photos.length ? `/storage/${product.code}/${product.photos[0]}` : '/storage/0/logo.png'}
                                         price={product.amount}
                                         types={product.types}
-                                        percent='0'
+                                        percent={product.amount?product.amount:'0'}
                                     />
                                 }
                             }

@@ -16,6 +16,7 @@ import { useEffect } from "react";
 import { useSelector } from "react-redux";
 import formatPrice from "@/helpers/formatPrice";
 
+
 export default function ProductBox({
 	id,
 	name,
@@ -53,7 +54,9 @@ export default function ProductBox({
     pack = `قیمت هر بسته  `
   }else if(calculate[0][0] === 'One'){
     pack = `قیمت هر دانه  `
-  }}
+  }};
+  const DiscoutionCalculation = (amount) => (amount * (1 - percent/100)).toFixed(0);
+
 	return (
 		<Link href={`/products/${id}`} passHref>
 		<div className={styles.container} onClick={handleClick}>
@@ -92,10 +95,13 @@ export default function ProductBox({
 							<p>
 							{entres?entres[0][0].package["1000"]?"قیمت هر کیلو":pack:"قیمت هر کیلو"}
 							</p>
-							<p>
-							{entres?entres[0][0].package["1000"]?
-							formatPrice(entres[0][0].package["1000"])
-							:formatPrice(calculate[0][1]):"600000"}
+								{percent > 0 ?<del>
+									{entres[0][0].package["1000"]?formatPrice(entres[0][0].package["1000"]):formatPrice(calculate[0][1])}
+									<small>تومان</small>
+									</del>:<span style={{color:'#fff'}}>_</span>}
+									<p>
+									{entres[0][0].package["1000"]?formatPrice(DiscoutionCalculation(entres[0][0].package["1000"])):
+									formatPrice(DiscoutionCalculation(calculate[0][1]))}
 								 <small>تومان</small>
 							</p>
 						</div>

@@ -6,7 +6,7 @@ export default function Category({ categories }) {
 	// console.log(categories)
 	return (
 		<section className="section">
-			<div className={styles.container} style={{display:'flex', alignContent:'center', justifyContent:'space-around',flexFlow:'row wrap'}}>
+			<div className={styles.container} style={{display:'flex', alignContent:'center', justifyContent:'space-around',flexFlow:'row wrap', direction:'ltr'}}>
 				{categories.map(({ _id, name, photos }) => {
 					const img =
 						photos?.length > 0
