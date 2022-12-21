@@ -12,7 +12,7 @@ export default function ProductModal({ images, product_code }) {
 
   const handleClickNext = e => {
     setActiveId(prevId => {
-      return prevId < images.length ? prevId + 1 : 1
+      return prevId < images.length - 1? prevId + 1 : 0
     })
   }
 
@@ -24,7 +24,7 @@ export default function ProductModal({ images, product_code }) {
       return prevId > images.length ? prevId - 1 : images.length
     })
   }
-
+  // console.log(activeId)
   return (
     <div className={styles.container}>
       <div className={styles.item}>
@@ -43,6 +43,7 @@ export default function ProductModal({ images, product_code }) {
       </div>
       <div className={styles.items}>
         <ul className={styles.list}>
+          
           {images.map((img, index) => (
             <ProductGalleryItem key={index} img={`/storage/${product_code}/${img}`}
              handleClick={() => setActiveId(index)} />

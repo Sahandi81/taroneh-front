@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link'
-import SwiperCore, { Navigation } from 'swiper';
+// import SwiperCore, { Navigation } from 'swiper';
 import { Swiper as SwiperContainer, SwiperSlide } from 'swiper/react';
 import 'swiper/css/bundle';
 
@@ -8,11 +8,11 @@ import ArrowLeftIcon from '../icons/arrow-left-dark-1-icon';
 import ArrowLeftLight from '../icons/arrow-left-light-icon';
 import SwiperItem from './swiper-item';
 import styles from '@/styles/components/swiper.module.scss';
-import imageLoader from "@/helpers/imageLoader";
+// import imageLoader from "@/helpers/imageLoader";
 
 // SwiperCore.use([Navigation]);
 
-export default function Swiper({ title, headColor, backColor, items, id, img , slug, product_code}) {
+export default function Swiper({ title, headColor, backColor, items, id, img , slug, product_code, goTo}) {
   return (
     <div
       className={styles.container}
@@ -24,7 +24,7 @@ export default function Swiper({ title, headColor, backColor, items, id, img , s
       >
         <h3>{title}</h3>
         <Link 
-        href={'/products?type=new-products'}
+        href={'/products?type='+ slug}
         // href={`/products?type=${slug}`} 
         passHref>
         <p>
@@ -50,6 +50,8 @@ export default function Swiper({ title, headColor, backColor, items, id, img , s
         slidesPerView={1}
         spaceBetween={32}
         centeredSlides
+        
+        // onClick={(e)=>console.log(e)}
         breakpoints={{
           400: {
             slidesPerView: 1.3,
@@ -82,6 +84,7 @@ export default function Swiper({ title, headColor, backColor, items, id, img , s
           nextEl: `.next-${id}`,
           prevEl: `.prev-${id}`
         }}
+        
       >
         {items.map(({ id, types, ...otherProps }) => (
           <SwiperSlide key={id}>
@@ -91,7 +94,7 @@ export default function Swiper({ title, headColor, backColor, items, id, img , s
       </SwiperContainer>
       </div>
       {/* BTN Next - BTN Prev */}
-      <div className={`${styles.btn_right} prev-${id}`}>
+      <div  className={`${styles.btn_right} prev-${id}`}>
         <ArrowLeftLight className={styles.arrow} />
       </div>
       <div className={`${styles.btn_left} next-${id}`}>

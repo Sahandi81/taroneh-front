@@ -1,9 +1,9 @@
 import CategoryItem from "./category-item";
 import styles from "@/styles/components/category.module.scss";
-import CATEGORY_DATA from "@/components/home/category/category.data";
+// import CATEGORY_DATA from "@/components/home/category/category.data";
 
 export default function Category({ categories }) {
-	// console.log(categories)
+	// console.log(categories,'categories')
 	return (
 		<section className="section">
 			<div className={styles.container} style={{display:'flex', alignContent:'center', justifyContent:'space-around',flexFlow:'row wrap', direction:'ltr'}}>

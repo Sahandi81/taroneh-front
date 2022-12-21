@@ -23,7 +23,7 @@ export default function Products({ products, title, length, pg}) {
     const [page, setPage] = useState(1);
     const [perPage, setPerPage] = useState(5);
     const [lastPage, setLastPage] = useState(1);
-    // console.log(pg)
+    console.log(products)
     const { query } = useRouter()
     const path = window.location.search;
     useEffect(()=>{
@@ -138,8 +138,8 @@ export default function Products({ products, title, length, pg}) {
                                         name={product.product_info.title}
                                         img={product.product_info.photos.length ? `/storage/${product.product_info.code}/${product.product_info.photos[0]}` : '/storage/0/logo.png'}
                                         price={product.product_info.amount}
-                                        types={product.types}
-                                        percent={product.amount?product.amount:'0'}
+                                        types={product.product_info.types}
+                                        percent={product.product_info.amount?product.product_info.amount:'0'}
                                     />
                                 } else {
                                     return <ProductBox
@@ -216,6 +216,12 @@ export async function getServerSideProps({ query }) {
                 title = `جدیدترین محصولات | بازار آجیل و خشکبار طارونه`;
                 break;
             }
+            case "reception-boxes":{
+                const res = await ServiceCaller('api/catering');
+                products = res.data.map(el=>el.product);
+                title = `جدیدترین محصولات | بازار آجیل و خشکبار طارونه`;
+                break;
+            }
         }
     }
 
@@ -232,7 +238,7 @@ export async function getServerSideProps({ query }) {
         length = res.total
 
     }
-        
+        // console.log(products)
     return {
         props: { products, title, length , pg: page?page:null }
     };
