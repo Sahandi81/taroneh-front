@@ -143,6 +143,7 @@ export default function LoginStep1({ handleClick }) {
 
 				}
 			}).catch(er=>{
+				console.log(er)
 				setNotification({
 					show: true,
 					status: "error",

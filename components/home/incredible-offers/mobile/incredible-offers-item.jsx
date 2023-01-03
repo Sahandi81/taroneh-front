@@ -30,6 +30,7 @@ export default function IncredibleOffersItem({id, title, img, price, percent}) {
   }else if(calculate[0][0] === 'One'){
     pack = `قیمت هر دانه  `
   }
+  
   const router = useRouter();
   const goToProductHandller=()=>{
         router.push(`/products/${id}`)

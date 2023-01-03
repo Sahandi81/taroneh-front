@@ -91,8 +91,8 @@ export default function Shipping() {
 	};
 
 	const handleClickContinue = (e) => {
+		console.log('shipping')
 		e.preventDefault();
-		// console.log(shipping)
 		if (shipping.address.length === 0) {
 			setNotification({
 				show: true,
@@ -149,7 +149,7 @@ export default function Shipping() {
 
 			})
 			.catch((error) => {
-				console.error(error);
+				console.error(error,'uyugy');
 			});
 	};
 	const handleChange = (e) => {

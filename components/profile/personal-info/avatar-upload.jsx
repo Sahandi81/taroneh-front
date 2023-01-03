@@ -40,6 +40,7 @@ export default function AvatarUpload({src, id, onUpload, }) {
                 onUpload(data.file);
                 setImage(data.file);
                 setLoading(false);
+                console.log(data)
                 if(data.success){
                     dispatch(setCredentials({
                         ...user,

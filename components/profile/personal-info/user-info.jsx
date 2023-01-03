@@ -50,6 +50,7 @@ export default function UserInfo() {
 
   const user = useSelector(selectUser);
   const setUserData= useDispatch();
+	const dispatch = useDispatch();
  
 
   useEffect(() => {
@@ -109,9 +110,14 @@ export default function UserInfo() {
         phone:user.phone,
         photos: [avatar.value],
         gender
-      }).unwrap();
-      // setUserData(setCredentials(registerData.user, ))
-      // console.log(registerData, 'dds')
+      }).unwrap().then(res=>{
+        console.log(res.user)
+        // res.user. = user.address
+
+      setUserData(setCredentials({...user, f_name: res.user.f_name, l_name: res.user.l_name, phone: res.user.phone } ))
+
+      });
+      console.log(registerData, 'dds')
       setNotification({
         show: true,
         status: "success",

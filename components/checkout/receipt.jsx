@@ -88,6 +88,7 @@ export default function Receipt() {
 							</tr>
 						);
 					})}
+					
 					{/* <tr>
             <td></td>
             <td>7725549</td>
@@ -150,9 +151,14 @@ export default function Receipt() {
 						</p>
 					</div>
 				)}
+				
 				<p>
+				20,000 تومان هزینه پیک
+				&nbsp;
+				&nbsp;
+				&nbsp;
 					مبلغ قابل پرداخت
-					<span>{formatPrice(totalPrice)}</span>
+					<span>{formatPrice(totalPrice + 20000) }</span>
 					{currency}
 				</p>
 			</div>

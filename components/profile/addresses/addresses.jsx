@@ -64,7 +64,7 @@ export default function Addresses({ items }) {
 				</div>
 				<div className={styles.body}>
 					{!isLoading &&
-					 user.address.length > 0	&&	user?.address?.map((item) => (
+					 user?.address?.length > 0	&&	user?.address?.map((item) => (
 							<AddressItem handleClick={()=>deleteAddressHandller(item._id)} key={item._id} address={item?.address} />
 						))}
 				</div>

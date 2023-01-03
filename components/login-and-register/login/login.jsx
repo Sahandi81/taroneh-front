@@ -19,6 +19,7 @@ export default function Login() {
   
   const  handleClickNextStep = async(e) => {
     setStep(prevStep => prevStep < 3 ? prevStep + 1:prevStep);
+    console.log('vali man')
     if (step === 2) {
       const data = await sendVerificationCode(phone.value).unwrap();
       if (phone.value.length < 11) {

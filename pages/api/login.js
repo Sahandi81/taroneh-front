@@ -12,6 +12,8 @@ export default async function login(req, res) {
     } else {
       bodyData = { phone: username, password };
     }
+
+    console.log(req.body)
     
     const backendRes = await fetch(`${API_URL}/api/login`, {
       method: 'POST',
