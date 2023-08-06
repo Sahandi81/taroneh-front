@@ -26,7 +26,7 @@ export async function getServerSideProps({params:params}) {
   // Fetch data from external API
   // console.log(params)
   // const res = await ServiceCaller(`blog/${params.slug}`);
-  const fetchs =await fetch( 'https://api.taroneh.ir/api/blog/'+ params.slug,{
+  const fetchs =await fetch( 'https://api.sahandi81.ir/api/blog/'+ params.slug,{
     method: 'GET',
     headers: {
       
@@ -34,7 +34,7 @@ export async function getServerSideProps({params:params}) {
     },
   })
   const data =await fetchs.json();
-  // console.log(data, 'https://api.taroneh.ir/api/blog/'+ params.slug)
+  // console.log(data, 'https://api.sahandi81.ir/api/blog/'+ params.slug)
   // console.log(params)
   return { props: { posts: data } }
 }
