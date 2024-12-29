@@ -8,7 +8,7 @@ export default function Hero() {
 
   return (
     <div className={styles.container}>
-        <div className={styles.desk}>
+        <div className={styles.desk}  style={{display: "flex", justifyContent: "center"}}>
           <Image
             src={banner}
             alt='brown and beige nut lot'
