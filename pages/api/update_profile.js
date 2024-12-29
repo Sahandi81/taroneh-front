@@ -14,7 +14,7 @@ export default async function updateProfile(req, res) {
 
     const {  address } = req.body;
     
-    const backendRes = await fetch(`https://api.sahandi81.ir/api/panel/update_profile`,{
+    const backendRes = await fetch(`https://tapi.ydos.ir/api/panel/update_profile`,{
       method:'PATCH',
       headers:{
         'Content-Type': 'application/json',
